@@ -4,11 +4,9 @@ package gsubstr
 // substr (text, 2, 2)
 func Substr(value string, leni int, nums ...int) string {
 	var lenf int
-
 	if len(nums) > 1 {
 		return ""
 	}
-
 	if len(nums) == 0 {
 		if leni < 0 {
 			lenf = -(leni)
@@ -29,8 +27,6 @@ func Substr(value string, leni int, nums ...int) string {
 		} else if lenf < 0 && leni < 0 {
 			tmpf := -lenf
 			tmpi := -leni
-			//tmp3 := 0
-
 			if tmpi >= len(value) {
 				tmpi = 0
 			} else {
