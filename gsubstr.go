@@ -1,7 +1,5 @@
 package gsubstr
 
-// substr (text, 0, 4)
-// substr (text, 2, 2)
 func Substr(value string, leni int, nums ...int) string {
 	var lenf int
 	if len(nums) > 1 {

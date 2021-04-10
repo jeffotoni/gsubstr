@@ -111,6 +111,7 @@ func TestSubstr(t *testing.T) {
 		{"test_substr_", args{"A", 0, []int{2}}, "A"},
 		{"test_substr_", args{"A", 0, []int{-1}}, ""},
 		{"test_substr_", args{"AB", 0, []int{-1}}, "A"},
+		{"test_substr_", args{"ABC", 1, []int{-1}}, "B"},
 	}
 
 	for _, tt := range tests {
