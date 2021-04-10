@@ -106,6 +106,11 @@ func TestSubstr(t *testing.T) {
 		{"test_substr_", args{"ABCDEFGH", -6, []int{-2}}, "CDEF"},
 		{"test_substr_", args{"ABCDEFGH", -6, []int{-1}}, "CDEFG"},
 		{"test_substr_", args{"ABCDEFGH", -6, []int{-0}}, ""},
+
+		{"test_substr_", args{"A", 0, []int{1}}, "A"},
+		{"test_substr_", args{"A", 0, []int{2}}, "A"},
+		{"test_substr_", args{"A", 0, []int{-1}}, ""},
+		{"test_substr_", args{"AB", 0, []int{-1}}, "A"},
 	}
 
 	for _, tt := range tests {

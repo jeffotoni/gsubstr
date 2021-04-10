@@ -46,15 +46,7 @@ func Substr(value string, leni int, nums ...int) string {
 			} else {
 				tmp3 = len(value) - tmpf - tmpi
 			}
-
-			// if tmp > tmp2 {
-			// 	tmp3 = tmp - tmp2
-			// } else {
-			// 	tmp3 = tmp2 - tmp
-			// }
-
 			lenf = tmp3
-			println("lenf:", lenf, " - tmpi:", tmpi, "tmpf:", tmpf)
 		}
 	}
 
@@ -68,11 +60,6 @@ func Substr(value string, leni int, nums ...int) string {
 		}
 	}
 
-	// if leni < 0 || lenf < 0 {
-	// 	return ""
-	// }
-
-	println(":::", leni, " ::::", lenf)
 	if len(value) < leni {
 		return ""
 	}
@@ -83,6 +70,5 @@ func Substr(value string, leni int, nums ...int) string {
 		soma = len(value)
 	}
 	leny = soma
-	//println(value[leni:leny])
 	return value[leni:leny]
 }

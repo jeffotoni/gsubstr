@@ -14,7 +14,7 @@ import (
 
 func main() {
 
-	println(gsub.Substr("DD-MM-YYYY", 0, 2))
+    println(gsub.Substr("DD-MM-YYYY", 0, 2))
     // out -> DD
     
     println(gsub.Substr("DD-MM-YYYY", 3, 2))
@@ -27,7 +27,7 @@ func main() {
     // out -> YYYY
 
     println(gsub.Substr("ABCDEFGH", 0))
-    // out ->
+    // out -> ABCDEFGH
 
     println(gsub.Substr("ABCDEFGH", 3))
     // out -> DEFGH
@@ -37,6 +37,30 @@ func main() {
 
     println(gsub.Substr("ABCDEFGH", 7))
     // out -> H
+
+    println(gsub.Substr("ABCDEFGH", -2, 1))
+    // out -> G
+
+    println(gsub.Substr("ABCDEFGH", -4, 2))
+    // out -> EF
+
+    println(gsub.Substr("ABCDEFGH", -4, 3))
+    // out -> EFG
+
+    println(gsub.Substr("ABCDEFGH", 2, -3))
+    // out -> CDE
+   
+    println(gsub.Substr("ABCDEFGH", 3, -3))
+    // out -> DE
+
+    println(gsub.Substr("ABCDEFGH", 2, -1))
+    // out -> CDEFG
+
+    println(gsub.Substr("ABCDEFGH", -6, -3))
+    // out -> CDE
+
+    println(gsub.Substr("ABCDEFGH", -6, -1))
+    // out -> CDEFG
 }
 ```
 
@@ -52,7 +76,7 @@ $ go run main.go
 $ go get -u github.com/jeffotoni/gsubstr
 ```
 
-#### Creators
+#### Creator
 
 Jefferson Otoni, [@jeffotoni](https://twitter.com/jeffotoni), [github.com/jeffotoni](https://github.com/jeffotoni), [linkedin.com/in/jeffotoni](https://www.linkedin.com/in/jeffotoni)   
 
