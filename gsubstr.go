@@ -15,33 +15,7 @@ func Substr(value string, leni int, nums ...int) string {
 			lenf = len(value)
 		}
 	} else {
-		lenf = nums[0]
-		if lenf < 0 && leni == 0 {
-			tmp := -lenf
-			lenf = len(value) - tmp
-		} else if lenf < 0 && leni > 0 {
-			tmp := -lenf
-			lenf = len(value) - tmp - leni
-		} else if lenf < 0 && leni < 0 {
-			tmpf := -lenf
-			tmpi := -leni
-			if tmpi >= len(value) {
-				tmpi = 0
-			} else {
-				tmpi = len(value) - tmpi
-			}
-			if tmpf > len(value) {
-				tmpf = len(value) - tmpf
-			}
-			tmp3 := 0
-			soma := tmpf + tmpi
-			if soma > len(value) {
-				tmp3 = 0
-			} else {
-				tmp3 = len(value) - tmpf - tmpi
-			}
-			lenf = tmp3
-		}
+		lenf = lenfLast(value, nums[0], leni)
 	}
 
 	if leni < 0 {
@@ -58,11 +32,39 @@ func Substr(value string, leni int, nums ...int) string {
 		return ""
 	}
 
-	leny := lenf
 	soma := leni + lenf
 	if soma > len(value) {
 		soma = len(value)
 	}
-	leny = soma
-	return value[leni:leny]
+	return value[leni:soma]
+}
+
+func lenfLast(value string, lenf, leni int) int {
+	if lenf < 0 && leni == 0 {
+		tmp := -lenf
+		lenf = len(value) - tmp
+	} else if lenf < 0 && leni > 0 {
+		tmp := -lenf
+		lenf = len(value) - tmp - leni
+	} else if lenf < 0 && leni < 0 {
+		tmpf := -lenf
+		tmpi := -leni
+		if tmpi >= len(value) {
+			tmpi = 0
+		} else {
+			tmpi = len(value) - tmpi
+		}
+		if tmpf > len(value) {
+			tmpf = len(value) - tmpf
+		}
+		tmp3 := 0
+		soma := tmpf + tmpi
+		if soma > len(value) {
+			tmp3 = 0
+		} else {
+			tmp3 = len(value) - tmpf - tmpi
+		}
+		lenf = tmp3
+	}
+	return lenf
 }
