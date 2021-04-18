@@ -1,5 +1,6 @@
 package gsubstr
 
+// Substr function responsible for slicing a string according to its limits
 func Substr(value string, leni int, nums ...int) string {
 	var lenf int
 	if len(nums) > 1 {

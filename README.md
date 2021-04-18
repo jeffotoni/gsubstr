@@ -22,12 +22,12 @@
 >A simple library to search for parts of a string, this function is known for slicing a string as needed. The shape that has been implemented makes it possible to use it with both positive and negative sizes. A simple, lightweight lib that we use in our day-to-day projects.
 
 #### Some types allowed
-> - Substr("DD-MM-YYYY", 0, 2)
-> - Substr("DD-MM-YYYY", 3, 2)
-> - Substr("ABCDEFGH", -6, -1)
-> - Substr("ABCDEFGH", -4, 2)
-> - Substr("ABCDEFGH", 0)
-> - Substr("ABCDEFGH", 2, -1)
+> - Substr("DD-MM-YYYY", 0, 2) == DD
+> - Substr("DD-MM-YYYY", 3, 2) == MM
+> - Substr("ABCDEFGH", -6, -1) == CDEFG
+> - Substr("ABCDEFGH", -4, 2)  == EF
+> - Substr("ABCDEFGH", 0)      == ABCDEFGH
+> - Substr("ABCDEFGH", 2, -1)  == CDEFG
 
 #### Usage
 
