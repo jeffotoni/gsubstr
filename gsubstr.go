@@ -1,3 +1,7 @@
+// Package gsubstr responsible for taking parts of the string as needed
+// A very simple lib to use and very useful in our day to day
+//
+// By @jeffotoni
 package gsubstr
 
 // Substr function responsible for slicing a string according to its limits
