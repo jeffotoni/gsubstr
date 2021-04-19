@@ -32,7 +32,6 @@ import (
 )
 
 func main() {
-
     println(gsub.Substr("DD-MM-YYYY", 0, 2))
     // out -> DD
     
@@ -45,6 +44,9 @@ func main() {
     println(gsub.Substr("YYYYMMDD", 0, 4))
     // out -> YYYY
 
+    println(gsub.Substr("ABCD", -1, -5))
+    // out -> D
+    
     println(gsub.Substr("ABCDEFGH", 0))
     // out -> ABCDEFGH
 

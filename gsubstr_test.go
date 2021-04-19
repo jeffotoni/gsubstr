@@ -17,25 +17,43 @@ func ExampleSubstr() {
 	// Output -> MM
 
 	fmt.Println(Substr("ABCDEFGH", -4, 2))
-	// out -> EF
+	// Output -> EF
+
+	fmt.Println(Substr("ABCD", -1, -5))
+	// Output -> D
 
 	fmt.Println(Substr("ABCDEFGH", -4, 3))
-	// out -> EFG
+	// Output -> EFG
 
 	fmt.Println(Substr("ABCDEFGH", 2, -3))
-	// out -> CDE
+	// Output -> CDE
 
 	fmt.Println(Substr("ABCDEFGH", 3, -3))
-	// oufmt.Printlnt -> DE
+	// Output -> DE
 
 	fmt.Println(Substr("ABCDEFGH", 2, -1))
-	// out -> CDEFG
+	// Output -> CDEFG
 
 	fmt.Println(Substr("ABCDEFGH", -6, -3))
-	// out -> CDE
+	// Output -> CDE
 
 	fmt.Println(Substr("ABCDEFGH", -6, -1))
-	// out -> CDEFG
+	// Output -> CDEFG
+}
+
+func TestSubstrZero(t *testing.T) {
+	s := Substr("", 0, 0, 0, 0)
+	if s != "" {
+		t.Errorf("Error Substr zero want len == 0 got:%s", s)
+	}
+}
+
+func TestSubstrNegative(t *testing.T) {
+	s := Substr("ABCD", -1, -5)
+	if s != "D" {
+		t.Errorf("Error Substr Negative want D got:%s", s)
+	}
+	t.Log(s)
 }
 
 func TestSubstr(t *testing.T) {
@@ -148,6 +166,7 @@ func TestSubstr(t *testing.T) {
 		{"test_substr_", args{"A", 0, []int{-1}}, ""},
 		{"test_substr_", args{"AB", 0, []int{-1}}, "A"},
 		{"test_substr_", args{"ABC", 1, []int{-1}}, "B"},
+		{"test_substr_", args{"ABCD", -1, []int{-5}}, "D"},
 	}
 
 	for _, tt := range tests {
