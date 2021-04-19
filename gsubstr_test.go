@@ -1,6 +1,42 @@
 package gsubstr
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
+
+// This function is named ExampleSubstr()
+// it with the Example .
+func ExampleSubstr() {
+	// This example Substr function accepts some types
+	// specific func (value string, leni int, nums ...int).
+	fmt.Println(Substr("DD-MM-YYYY", 0, 2))
+	// Output -> DD
+
+	fmt.Println(Substr("DD-MM-YYYY", 3, 2))
+	// Output -> MM
+
+	fmt.Println(Substr("ABCDEFGH", -4, 2))
+	// out -> EF
+
+	fmt.Println(Substr("ABCDEFGH", -4, 3))
+	// out -> EFG
+
+	fmt.Println(Substr("ABCDEFGH", 2, -3))
+	// out -> CDE
+
+	fmt.Println(Substr("ABCDEFGH", 3, -3))
+	// oufmt.Printlnt -> DE
+
+	fmt.Println(Substr("ABCDEFGH", 2, -1))
+	// out -> CDEFG
+
+	fmt.Println(Substr("ABCDEFGH", -6, -3))
+	// out -> CDE
+
+	fmt.Println(Substr("ABCDEFGH", -6, -1))
+	// out -> CDEFG
+}
 
 func TestSubstr(t *testing.T) {
 	type args struct {
